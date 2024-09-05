@@ -24,7 +24,7 @@ Before setting up the integration, ensure you have the following:
 ### Clone the Repository:
 
 ```bash
-git clone https://github.com/yourusername/github-jira-integration.git
+git clone https://github.com/GMATHUR90/Github_jira_integration.git
 cd github-jira-integration
 ```
 ### Install Dependencies:
