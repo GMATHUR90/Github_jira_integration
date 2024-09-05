@@ -26,8 +26,23 @@ Before setting up the integration, ensure you have the following:
 ```bash
 git clone https://github.com/yourusername/github-jira-integration.git
 cd github-jira-integration
-
+```
 ### Install Dependencies:
 ```bash
 pip install -r requirements.txt
+```
+## Set Up Environment Variables:
+1.Create a .env file in the root directory of the project.
+2. Add your GitHub and Jira credentials to the .env file:
+```bash
+GITHUB_TOKEN=your_github_token
+JIRA_API_TOKEN=your_jira_api_token
+JIRA_USERNAME=your_jira_username
+JIRA_PROJECT_KEY=your_jira_project_key
+```
+## Run the Integration:
+```bash
+python main.py
+```
+
 
