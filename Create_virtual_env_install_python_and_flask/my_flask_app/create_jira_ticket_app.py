@@ -7,7 +7,7 @@ from flask import Flask
 # Creating a flask app instance
 app = Flask(__name__)
 
-@app.route('/creteJira', methods=['POST'])
+@app.route('/createJira', methods=['POST'])
 #def hello():
 #    return "Hello World"
 #app.run('0.0.0.0')
