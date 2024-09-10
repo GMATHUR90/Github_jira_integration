@@ -1,7 +1,7 @@
 import requests
 from requests.auth import HTTPBasicAuth
 import json
-
+import os
 from flask import Flask
 
 # Creating a flask app instance
