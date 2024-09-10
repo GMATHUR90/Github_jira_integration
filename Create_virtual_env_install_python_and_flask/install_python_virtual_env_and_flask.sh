@@ -18,8 +18,8 @@ python3 -m venv venv
 # 5. Activate the Virtual Environment
 source venv/bin/activate
 
-# 6. Install Flask
-pip install Flask
+# 6. Install Flask and requests module
+pip install Flask requests
 
 # 7. Verify Installation
 flask --version
