@@ -1,0 +1,5 @@
+Issue faced github jenkin integration
+
+1) issue created: permission issue
+ The error message {"errorMessages":["You do not have permission to create issues in this project."],"errors":{}} indicates that the Jira API returned a permission error when your integration attempted to create an issue in Jira. This is likely due to insufficient permissions for the API token or user account being used to authenticate the request.
+
