@@ -1,4 +1,4 @@
-Issue: Permission Denied Error
+1. Issue: Permission Denied Error
 
 Details: When integrating GitHub with Jenkins and Jira, an error occurs when attempting to create an issue in Jira. The error message returned is:
 
@@ -7,3 +7,17 @@ Details: When integrating GitHub with Jenkins and Jira, an error occurs when att
 ```
 This indicates that the Jira API token or user account lacks the necessary permissions. Additionally, when trying to trigger issue creation with a comment tagged /jira, the integration fails, but untagged comments trigger the event correctly.
 
+2. Issue:
+Error: "Specify a valid project ID or key"
+
+Details:
+The system is unable to recognize the provided project ID or key.
+
+```bash
+{
+    "errorMessages": [],
+    "errors": {
+        "project": "Specify a valid project ID or key"
+    }
+}
+```
