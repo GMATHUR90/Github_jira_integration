@@ -41,7 +41,7 @@ def createJira():
              "version": 1
         },
         "project": {
-           "key": "MTS"
+           "key": "SCRUM"
         },
         "issuetype": {
             "id": "10007"
