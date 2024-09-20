@@ -12,7 +12,7 @@ app = Flask(__name__)
 @app.route('/createJira', methods=['POST'])
 def createJira():
 
-    url = "https://ecegauravmathur90.atlassian.net/rest/api/3/issue"
+    url = "https://ecegauravmathur90-1724568897886.atlassian.net/rest/api/3/issue"
 
     email_id = os.getenv('EMAIL_ID')
     jira_api_token = os.getenv('JIRA_API_TOKEN')
