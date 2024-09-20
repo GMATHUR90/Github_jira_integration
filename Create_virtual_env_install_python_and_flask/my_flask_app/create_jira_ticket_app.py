@@ -44,7 +44,7 @@ def createJira():
            "key": "SCRUM"
         },
         "issuetype": {
-            "id": "10007"
+            "id": "10004"
         },
         "summary": "Main order flow broken",
     },
