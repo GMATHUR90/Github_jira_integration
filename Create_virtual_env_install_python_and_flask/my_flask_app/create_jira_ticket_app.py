@@ -66,7 +66,8 @@ def createJira():
     
         return json.dumps(json.loads(response.text), sort_keys=True, indent=4, separators=(",", ": "))
     # If /jira is not found, return a message
-    return json.dumps({"message":"Comment does not contain /jira"}, sort_keys=True, indent=4)
+    else:
+        return json.dumps({"message":"Comment does not contain /jira"}, sort_keys=True, indent=4)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
