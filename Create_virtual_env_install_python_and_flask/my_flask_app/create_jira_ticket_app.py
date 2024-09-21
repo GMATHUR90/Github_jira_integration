@@ -11,7 +11,9 @@ app = Flask(__name__)
 # Define a route that handles GET requests
 @app.route('/createJira', methods=['POST'])
 def createJira():
-
+    # Get the comment from request payload
+    data = request.get_json() 
+    comment = data.get('comment', '') # Assuming comment is part of payload
     url = "https://ecegauravmathur90-1724568897886.atlassian.net/rest/api/3/issue"
 
     email_id = os.getenv('EMAIL_ID')
@@ -51,16 +53,20 @@ def createJira():
     "update": {}
     } )
 
+    # Check if the comment contains /jira
 
-    response = requests.request(
-        "POST",
-        url,
-        data=payload,
-        headers=headers,
-        auth=auth
+    if '/jira' in comment:
+        response = requests.request(
+                "POST",
+                url,
+                data=payload,
+                headers=headers,
+                auth=auth
     )
-
-    return json.dumps(json.loads(response.text), sort_keys=True, indent=4, separators=(",", ": "))
+    
+        return json.dumps(json.loads(response.text), sort_keys=True, indent=4, separators=(",", ": "))
+    # If /jira is not found, return a message
+    return json.dumps({"message":"Comment does not contain /jira"}, sort_keys=True, indent=4)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
