@@ -55,7 +55,7 @@ def createJira():
 
     # Check if the comment contains /jira
 
-    if '/jira' in comment.strip().lower():
+    if '/jira' in comment:
         response = requests.request(
                 "POST",
                 url,
