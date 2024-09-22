@@ -14,6 +14,8 @@ def createJira():
     # Get the comment from request payload
     data = request.get_json() 
     comment = data.get('comment', '') # Assuming comment is part of payload
+    print(f"Received comment: {comment}") # Debug statement
+
     url = "https://ecegauravmathur90-1724568897886.atlassian.net/rest/api/3/issue"
 
     email_id = os.getenv('EMAIL_ID')
@@ -63,7 +65,7 @@ def createJira():
                 headers=headers,
                 auth=auth
     )
-    
+        print(f"Response Status Code: {response.status_code}, Response Text: {response.text}")
         return json.dumps(json.loads(response.text), sort_keys=True, indent=4, separators=(",", ": "))
     # If /jira is not found, return a message
     else:
