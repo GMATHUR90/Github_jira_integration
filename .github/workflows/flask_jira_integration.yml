@@ -31,8 +31,6 @@ jobs:
           # Go into the Flask app directory
           cd my_flask_app
           
-          # Activate the virtual environment
-          source venv/bin/activate
           
       - name: Run Flask App
         env: 
