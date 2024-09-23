@@ -29,7 +29,7 @@ jobs:
           ./install_python_virtual_env_and_flask.sh
           
           # Go into the Flask app directory
-          cd ../my_flask_app
+          cd my_flask_app
           
           # Activate the virtual environment
           source venv/bin/activate
