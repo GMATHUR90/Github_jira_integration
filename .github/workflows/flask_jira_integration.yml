@@ -44,6 +44,8 @@ jobs:
           EMAIL_ID: ${{ secrets.EMAIL_ID }}
           JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
         run: |
-          
-          # Run the Flask application with the correct path to the Python file
+          # Navigate to the Flask app directory
+          cd Create_virtual_env_install_python_and_flask/my_flask_app
+
+          # Run the Flask application
           python create_jira_ticket_app.py
