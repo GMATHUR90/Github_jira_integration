@@ -34,9 +34,6 @@ jobs:
           # Activate the virtual environment
           source venv/bin/activate
           
-          # Install any additional dependencies (just in case)
-          pip install -r requirements.txt
-          
       - name: Run Flask App
         env: 
           EMAIL_ID: ${{ secrets.EMAIL_ID }}
