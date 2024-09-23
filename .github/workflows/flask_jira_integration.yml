@@ -30,15 +30,22 @@ jobs:
           
           # Go into the Flask app directory
           cd my_flask_app
-
-          # Ensure the virtual environment is activated
-          source venv/bin/activate
           
+          # Ensure the virtual environment is created
+          if [ ! -d "venv" ]; then
+            python3 -m venv venv
+          fi
+          
+          # Activate the virtual environment
+          source venv/bin/activate
           
       - name: Run Flask App
         env: 
           EMAIL_ID: ${{ secrets.EMAIL_ID }}
           JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
         run: |
-          # Run the Flask application
+          # Ensure the virtual environment is activated
+          source venv/bin/activate
+          
+          # Run the Flask application with the correct path to the Python file
           python create_jira_ticket_app.py
