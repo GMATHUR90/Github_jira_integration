@@ -1,11 +1,11 @@
 name: Flask Jira Integration Workflow
 
 # Trigger the workflow on push to the main branch
-
 on:
   push:
     branches:
       - main
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -14,20 +14,36 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up python
+      - name: Set up Python
         uses: actions/setup-python@v4
         with: 
           python-version: '3.x'
-      
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install requests flask
 
+      - name: Install dependencies and set up virtual environment
+        run: |
+          # Go into the correct folder
+          cd Create_virtual_env_install_python_and_flask
+          
+          # Run the shell script to install Python, virtualenv, and Flask
+          chmod +x install_python_virtual_env_and_flask.sh
+          ./install_python_virtual_env_and_flask.sh
+          
+          # Go into the Flask app directory
+          cd ../my_flask_app
+          
+          # Activate the virtual environment
+          source venv/bin/activate
+          
+          # Install any additional dependencies (just in case)
+          pip install -r requirements.txt
+          
       - name: Run Flask App
         env: 
           EMAIL_ID: ${{ secrets.EMAIL_ID }}
           JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
         run: |
+          # Ensure the virtual environment is activated
+          source venv/bin/activate
+          
+          # Run the Flask application
           python create_jira_ticket_app.py
-        
