@@ -44,8 +44,6 @@ jobs:
           EMAIL_ID: ${{ secrets.EMAIL_ID }}
           JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
         run: |
-          # Ensure the virtual environment is activated
-          source venv/bin/activate
           
           # Run the Flask application with the correct path to the Python file
           python create_jira_ticket_app.py
