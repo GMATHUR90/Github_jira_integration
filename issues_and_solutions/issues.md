@@ -22,6 +22,6 @@ The system is unable to recognize the provided project ID or key.
         "project": "Specify a valid project ID or key"
     }
 }
-
-Solution: To resolve this issue, I created two scripts: issue_types.py and list_of_jira_project.py. These scripts list all available projects along with their project IDs and keys. After running these scripts, I identified the correct project key. In my case, I selected the default key type "epic," which resolved the problem.
 ```
+Solution: To resolve this issue, I created two scripts: issue_types.py and list_of_jira_project.py. These scripts list all available projects along with their project IDs and keys. After running these scripts, I identified the correct project key. In my case, I selected the default key type "epic," which resolved the problem.
+
